@@ -1,0 +1,10 @@
+#!/bin/sh
+
+NET=192.168.0
+FIRST=1
+LAST=254
+
+for HOST in `seq $FIRST $LAST`
+do
+	ping -w3 -c2 $NET.$HOST > /dev/null && echo "$NET.$HOST"
+done	
